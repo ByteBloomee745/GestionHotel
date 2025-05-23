@@ -1,0 +1,158 @@
+/* Styles spécifiques à la suite deluxe */
+.design-details {
+    padding: 100px 0;
+}
+
+.design-inner {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.design-content {
+    flex: 1;
+}
+
+.design-image {
+    flex: 1;
+}
+
+.design-image img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.design-features {
+    margin-top: 40px;
+}
+
+.design-features .feature {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.design-features .feature:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.design-features h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.design-features p {
+    font-family: var(--font-secondary);
+    font-size: 15px;
+    opacity: 0.8;
+    line-height: 1.8;
+}
+
+.local-experiences {
+    padding: 100px 0;
+    background-color: var(--light-color);
+}
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.experience-card {
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.experience-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+.experience-card:hover .experience-image img {
+    transform: scale(1.1);
+}
+
+.experience-content {
+    padding: 25px;
+}
+
+.experience-content h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.experience-content p {
+    font-family: var(--font-secondary);
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.price {
+    display: block;
+    font-family: var(--font-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Responsive Styles pour la suite deluxe */
+@media (max-width: 992px) {
+    .design-inner {
+        flex-direction: column;
+    }
+    
+    .design-image {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .experiences-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .design-features .feature {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .experience-content {
+        padding: 20px;
+    }
+}
+.preloader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}

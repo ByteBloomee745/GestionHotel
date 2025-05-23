@@ -1,0 +1,964 @@
+html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - ÉCLAT Hôtel de Luxe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/Reservation.css">
+    <style>
+        /* Styles spécifiques à la réservation */
+        .reservation-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.5)), 
+                        url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-color);
+        }
+        
+        .reservation-process {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .suite-option.selected {
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(184, 159, 122, 0.2);
+        }
+        
+        .payment-method {
+            background-color: #f9f7f2;
+        }
+    </style>
+</head>
+<body class="reservation-page">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-inner">
+                <div class="logo">ÉCLAT</div>
+                <div class="navigation">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html" data-text="Home">Home</a></li>
+                            <li><a href="index.html#suites" data-text="Suites">Suites</a></li>
+                            <li><a href="index.html#experiences" data-text="Experiences">Experiences</a></li>
+                            <li><a href="gallery.html" data-text="Gallery">Gallery</a></li>
+                            <li><a href="index.html#contact" data-text="Contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="nav-right">
+                        <div class="book-btn">Réserver</div>
+                        <div class="menu-btn">
+                            <div class="menu-btn-inner">
+                                <div class="menu-line"></div>
+                                <div class="menu-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-inner">
+            <div class="mobile-menu-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#suites">Suites</a></li>
+                    <li><a href="index.html#experiences">Experiences</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-footer">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p>© 2023 ÉCLAT. Tous droits réservés.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Réservation -->
+    <section class="reservation-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-splitting>Réservez Votre <span>Séjour</span></h1>
+                <p class="hero-subtitle">Découvrez notre processus de réservation simplifié pour une expérience sans souci</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Processus de Réservation -->
+    <section class="reservation-process">
+        <div class="container">
+            <div class="reservation-steps">
+                <div class="step active" data-step="1">
+                    <span>1</span>
+                    <p>Choisissez votre suite</p>
+                </div>
+                <div class="step" data-step="2">
+                    <span>2</span>
+                    <p>Dates & Options</p>
+                </div>
+                <div class="step" data-step="3">
+                    <span>3</span>
+                    <p>Détails personnels</p>
+                </div>
+                <div class="step" data-step="4">
+                    <span>4</span>
+                    <p>Paiement</p>
+                </div>
+                <div class="step" data-step="5">
+                    <span>5</span>
+                    <p>Confirmation</p>
+                </div>
+            </div>
+            
+            <!-- Étape 1: Choix de la Suite -->
+            <div class="reservation-step active" id="step-1">
+                <div class="step-header">
+                    <h2>Choisissez Votre <span>Suite</span></h2>
+                    <p>Sélectionnez parmi nos suites exceptionnelles pour commencer votre expérience ÉCLAT</p>
+                </div>
+                
+                <div class="suites-grid">
+                    <!-- Suite Royale -->
+                    <div class="suite-option" data-suite="royale">
+                        <div class="suite-image">
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80" alt="Suite Royale">
+                        </div>
+                        <div class="suite-content">
+                            <h3>Suite Royale</h3>
+                            <div class="suite-meta">
+                                <span><i class="fas fa-ruler-combined"></i> 120 m²</span>
+                                <span><i class="fas fa-user-friends"></i> 2-4 personnes</span>
+                            </div>
+                            <p>Notre suite la plus spacieuse avec vue panoramique sur Paris, salon séparé et salle de bain en marbre.</p>
+                            <div class="suite-price">
+                                <span>À partir de</span>
+                                <h4>€1,200<small>/nuit</small></h4>
+                            </div>
+                            <button class="select-btn">Sélectionner</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Suite Présidentielle -->
+                    <div class="suite-option" data-suite="presidentielle">
+                        <div class="suite-image">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Suite Présidentielle">
+                        </div>
+                        <div class="suite-content">
+                            <h3>Suite Présidentielle</h3>
+                            <div class="suite-meta">
+                                <span><i class="fas fa-ruler-combined"></i> 90 m²</span>
+                                <span><i class="fas fa-user-friends"></i> 2 personnes</span>
+                            </div>
+                            <p>Élégance contemporaine avec terrasse privée, dressing spacieux et service de majordome 24/7.</p>
+                            <div class="suite-price">
+                                <span>À partir de</span>
+                                <h4>€950<small>/nuit</small></h4>
+                            </div>
+                            <button class="select-btn">Sélectionner</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Suite Deluxe -->
+                    <div class="suite-option" data-suite="deluxe">
+                        <div class="suite-image">
+                            <img src="https://images.unsplash.com/photo-1566669437686-c2b5c39527e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Suite Deluxe">
+                        </div>
+                        <div class="suite-content">
+                            <h3>Suite Deluxe</h3>
+                            <div class="suite-meta">
+                                <span><i class="fas fa-ruler-combined"></i> 65 m²</span>
+                                <span><i class="fas fa-user-friends"></i> 2 personnes</span>
+                            </div>
+                            <p>Charme intemporel avec baignoire freestanding, parquet en chêne et mobilier design sur mesure.</p>
+                            <div class="suite-price">
+                                <span>À partir de</span>
+                                <h4>€750<small>/nuit</small></h4>
+                            </div>
+                            <button class="select-btn">Sélectionner</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-actions">
+                    <button class="next-btn" disabled>Suivant <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Étape 2: Dates & Options -->
+            <div class="reservation-step" id="step-2">
+                <div class="step-header">
+                    <h2>Dates & <span>Options</span></h2>
+                    <p>Sélectionnez vos dates de séjour et personnalisez votre expérience avec nos options premium</p>
+                </div>
+                
+                <div class="date-selection">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date d'arrivée</label>
+                            <input type="date" id="checkin-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Date de départ</label>
+                            <input type="date" id="checkout-date" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Adultes</label>
+                            <select id="adults-count">
+                                <option value="1">1 Adulte</option>
+                                <option value="2" selected>2 Adultes</option>
+                                <option value="3">3 Adultes</option>
+                                <option value="4">4 Adultes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Enfants</label>
+                            <select id="children-count">
+                                <option value="0" selected>Aucun</option>
+                                <option value="1">1 Enfant</option>
+                                <option value="2">2 Enfants</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="options-selection">
+                    <h3>Options Supplémentaires</h3>
+                    <div class="options-grid">
+                        <div class="option-item">
+                            <input type="checkbox" id="breakfast-option" class="option-checkbox">
+                            <label for="breakfast-option">
+                                <div class="option-icon">
+                                    <i class="fas fa-coffee"></i>
+                                </div>
+                                <div class="option-content">
+                                    <h4>Petit-déjeuner gastronomique</h4>
+                                    <p>Service en chambre ou au restaurant</p>
+                                    <span class="option-price">+ €35/pers/jour</span>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <input type="checkbox" id="spa-option" class="option-checkbox">
+                            <label for="spa-option">
+                                <div class="option-icon">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <div class="option-content">
+                                    <h4>Accès illimité au spa</h4>
+                                    <p>Inclut un soin de bienvenue</p>
+                                    <span class="option-price">+ €120/séjour</span>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <input type="checkbox" id="airport-option" class="option-checkbox">
+                            <label for="airport-option">
+                                <div class="option-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <div class="option-content">
+                                    <h4>Transfert aéroport</h4>
+                                    <p>Service de voiturier avec véhicule premium</p>
+                                    <span class="option-price">+ €150/trajet</span>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <input type="checkbox" id="latecheckout-option" class="option-checkbox">
+                            <label for="latecheckout-option">
+                                <div class="option-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="option-content">
+                                    <h4>Late checkout</h4>
+                                    <p>Départ jusqu'à 18h (selon disponibilité)</p>
+                                    <span class="option-price">+ €80</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-actions">
+                    <button class="prev-btn"><i class="fas fa-arrow-left"></i> Précédent</button>
+                    <button class="next-btn">Suivant <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Étape 3: Détails Personnels -->
+            <div class="reservation-step" id="step-3">
+                <div class="step-header">
+                    <h2>Vos <span>Informations</span></h2>
+                    <p>Remplissez vos coordonnées pour finaliser votre réservation</p>
+                </div>
+                
+                <div class="personal-details">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Prénom</label>
+                            <input type="text" id="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" id="last-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Téléphone</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Adresse</label>
+                        <input type="text" id="address">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ville</label>
+                            <input type="text" id="city">
+                        </div>
+                        <div class="form-group">
+                            <label>Code Postal</label>
+                            <input type="text" id="zip-code">
+                        </div>
+                        <div class="form-group">
+                            <label>Pays</label>
+                            <select id="country">
+                                <option value="FR" selected>France</option>
+                                <option value="BE">Belgique</option>
+                                <option value="CH">Suisse</option>
+                                <option value="LU">Luxembourg</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Demandes Spéciales</label>
+                        <textarea id="special-requests" rows="4"></textarea>
+                    </div>
+                </div>
+                
+                <div class="step-actions">
+                    <button class="prev-btn"><i class="fas fa-arrow-left"></i> Précédent</button>
+                    <button class="next-btn">Suivant <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Étape 4: Paiement -->
+            <div class="reservation-step payment-method" id="step-4">
+                <div class="step-header">
+                    <h2>Méthode de <span>Paiement</span></h2>
+                    <p>Sélectionnez votre mode de paiement et saisissez vos informations</p>
+                </div>
+                
+                <div class="payment-selection">
+                    <div class="payment-tabs">
+                        <button class="payment-tab active" data-tab="credit-card">
+                            <i class="far fa-credit-card"></i> Carte de crédit
+                        </button>
+                        <button class="payment-tab" data-tab="paypal">
+                            <i class="fab fa-paypal"></i> PayPal
+                        </button>
+                        <button class="payment-tab" data-tab="bank-transfer">
+                            <i class="fas fa-university"></i> Virement bancaire
+                        </button>
+                    </div>
+                    
+                    <div class="payment-content active" id="credit-card">
+                        <div class="form-group">
+                            <label>Numéro de carte</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date d'expiration</label>
+                                <input type="text" id="card-expiry" placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label>Code de sécurité</label>
+                                <input type="text" id="card-cvv" placeholder="CVV">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Nom sur la carte</label>
+                            <input type="text" id="card-name" placeholder="Comme indiqué sur la carte">
+                        </div>
+                        
+                        <div class="card-icons">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" alt="Visa">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" alt="Mastercard">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple Pay">
+                        </div>
+                    </div>
+                    
+                    <div class="payment-content" id="paypal">
+                        <div class="paypal-info">
+                            <p>Vous serez redirigé vers PayPal pour compléter votre paiement de manière sécurisée.</p>
+                            <button class="paypal-btn">
+                                <i class="fab fa-paypal"></i> Payer avec PayPal
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-content" id="bank-transfer">
+                        <div class="bank-info">
+                            <p>Veuillez effectuer un virement aux coordonnées bancaires suivantes :</p>
+                            <div class="bank-details">
+                                <p><strong>Banque:</strong> BNP Paribas</p>
+                                <p><strong>IBAN:</strong> FR76 3000 4000 1900 0000 0000 123</p>
+                                <p><strong>BIC:</strong> BNPAFRPPXXX</p>
+                                <p><strong>Titulaire:</strong> ÉCLAT Hôtel de Luxe</p>
+                            </div>
+                            <p class="note">Votre réservation sera confirmée dès réception du paiement.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reservation-summary">
+                    <h3>Résumé de votre réservation</h3>
+                    <div class="summary-content">
+                        <div class="summary-item">
+                            <span>Suite</span>
+                            <span id="summary-suite">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Dates</span>
+                            <span id="summary-dates">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Durée</span>
+                            <span id="summary-nights">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Occupants</span>
+                            <span id="summary-guests">-</span>
+                        </div>
+                        <div class="summary-item options">
+                            <span>Options</span>
+                            <span id="summary-options">Aucune option sélectionnée</span>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <span id="summary-total">€0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-actions">
+                    <button class="prev-btn"><i class="fas fa-arrow-left"></i> Précédent</button>
+                    <button class="next-btn confirm-btn">Confirmer la Réservation</button>
+                </div>
+            </div>
+            
+            <!-- Étape 5: Confirmation -->
+            <div class="reservation-step" id="step-5">
+                <div class="confirmation-content">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Réservation <span>Confirmée</span></h2>
+                    <p class="confirmation-message">Merci, votre réservation a été confirmée. Un email de confirmation avec tous les détails a été envoyé à votre adresse email.</p>
+                    
+                    <div class="confirmation-details">
+                        <div class="detail-item">
+                            <span>Numéro de réservation</span>
+                            <strong id="booking-number">ECL-2023-XXXXXX</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Date d'arrivée</span>
+                            <strong id="confirmation-checkin">-</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Date de départ</span>
+                            <strong id="confirmation-checkout">-</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Suite</span>
+                            <strong id="confirmation-suite">-</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="confirmation-actions">
+                        <a href="index.html" class="cta-btn">Retour à l'accueil</a>
+                        <a href="#" class="print-btn"><i class="fas fa-print"></i> Imprimer</a>
+                    </div>
+                    
+                    <div class="confirmation-note">
+                        <p>Pour toute modification ou demande spéciale, veuillez contacter notre service réservations au <strong>+33 1 23 45 67 89</strong> ou par email à <strong>reservations@eclat.com</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">ÉCLAT</div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#suites">Suites</a></li>
+                        <li><a href="index.html#experiences">Expériences</a></li>
+                        <li><a href="gallery.html">Galerie</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>Newsletter</h5>
+                    <p>Abonnez-vous pour recevoir nos offres exclusives</p>
+                    <form>
+                        <input type="email" placeholder="Votre Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>© 2023 ÉCLAT. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="../script.js"></script>
+
+    
+    <script>
+        // Scripts spécifiques à la réservation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation du titre
+            if (typeof Splitting !== 'undefined') {
+                Splitting({
+                    target: document.querySelector('.hero-title'),
+                    by: 'chars'
+                });
+                
+                const chars = document.querySelectorAll('.hero-title .char');
+                chars.forEach((char, i) => {
+                    char.style.animationDelay = `${i * 0.05}s`;
+                    char.style.display = 'inline-block';
+                });
+            }
+            
+            // Gestion des étapes - CORRECTION PRINCIPALE
+            const steps = document.querySelectorAll('.reservation-step');
+            const stepIndicators = document.querySelectorAll('.reservation-steps .step');
+            let currentStep = 0;
+            
+            function showStep(stepIndex) {
+                // Désactiver toutes les étapes avec animation
+                steps.forEach((step, index) => {
+                    if (index !== stepIndex && step.classList.contains('active')) {
+                        gsap.to(step, {
+                            opacity: 0,
+                            y: 20,
+                            duration: 0.3,
+                            onComplete: function() {
+                                step.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+
+                // Mettre à jour les indicateurs visuels
+                stepIndicators.forEach(step => step.classList.remove('active'));
+                stepIndicators[stepIndex].classList.add('active');
+                currentStep = stepIndex;
+
+                // Activer la nouvelle étape
+                const nextStep = steps[stepIndex];
+                nextStep.style.display = 'block';
+                nextStep.classList.add('active');
+                
+                // Animation d'entrée
+                gsap.fromTo(nextStep, 
+                    { opacity: 0, y: 20 },
+                    { opacity: 1, y: 0, duration: 0.5 }
+                );
+
+                // Mettre à jour le résumé si nécessaire
+                if (stepIndex >= 3) {
+                    updateReservationSummary();
+                }
+            }
+            
+            // Navigation entre les étapes
+            document.querySelectorAll('.next-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (validateStep(currentStep)) {
+                        showStep(currentStep + 1);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.prev-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    showStep(currentStep - 1);
+                });
+            });
+            
+            // Validation des étapes
+            function validateStep(stepIndex) {
+                let isValid = true;
+                
+                switch(stepIndex) {
+                    case 0: // Choix de la suite
+                        if (!document.querySelector('.suite-option.selected')) {
+                            alert('Veuillez sélectionner une suite');
+                            isValid = false;
+                        }
+                        break;
+                        
+                    case 1: // Dates
+                        const checkin = document.getElementById('checkin-date').value;
+                        const checkout = document.getElementById('checkout-date').value;
+                        
+                        if (!checkin || !checkout) {
+                            alert('Veuillez sélectionner des dates valides');
+                            isValid = false;
+                        } else if (new Date(checkin) >= new Date(checkout)) {
+                            alert('La date de départ doit être après la date d\'arrivée');
+                            isValid = false;
+                        }
+                        break;
+                        
+                    case 2: // Détails personnels
+                        const firstName = document.getElementById('first-name').value;
+                        const lastName = document.getElementById('last-name').value;
+                        const email = document.getElementById('email').value;
+                        const phone = document.getElementById('phone').value;
+                        
+                        if (!firstName || !lastName || !email || !phone) {
+                            alert('Veuillez remplir tous les champs obligatoires');
+                            isValid = false;
+                        } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+                            alert('Veuillez entrer une adresse email valide');
+                            isValid = false;
+                        }
+                        break;
+                        
+                    case 3: // Paiement
+                        const paymentMethod = document.querySelector('.payment-tab.active').dataset.tab;
+                        
+                        if (paymentMethod === 'credit-card') {
+                            const cardNumber = document.getElementById('card-number').value;
+                            const cardExpiry = document.getElementById('card-expiry').value;
+                            const cardCvv = document.getElementById('card-cvv').value;
+                            const cardName = document.getElementById('card-name').value;
+                            
+                            if (!cardNumber || !cardExpiry || !cardCvv || !cardName) {
+                                alert('Veuillez remplir tous les détails de la carte');
+                                isValid = false;
+                            } else if (!/^\d{16}$/.test(cardNumber.replace(/\s/g, ''))) {
+                                alert('Numéro de carte invalide');
+                                isValid = false;
+                            }
+                        }
+                        break;
+                }
+                
+                return isValid;
+            }
+            
+            // Sélection des suites
+            document.querySelectorAll('.select-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const suiteOption = this.closest('.suite-option');
+                    
+                    // Désélectionner toutes les suites
+                    document.querySelectorAll('.suite-option').forEach(option => {
+                        option.classList.remove('selected');
+                    });
+                    
+                    // Sélectionner la suite actuelle
+                    suiteOption.classList.add('selected');
+                    
+                    // Activer le bouton suivant
+                    document.querySelector('#step-1 .next-btn').disabled = false;
+                    
+                    // Animation
+                    gsap.from(suiteOption, {
+                        scale: 0.95,
+                        duration: 0.3
+                    });
+                });
+            });
+            
+            // Onglets de paiement
+            document.querySelectorAll('.payment-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.dataset.tab;
+                    
+                    // Désactiver tous les onglets
+                    document.querySelectorAll('.payment-tab').forEach(t => {
+                        t.classList.remove('active');
+                    });
+                    
+                    // Désactiver tous les contenus
+                    document.querySelectorAll('.payment-content').forEach(c => {
+                        c.classList.remove('active');
+                    });
+                    
+                    // Activer l'onglet sélectionné
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Mise à jour du résumé
+            function updateReservationSummary() {
+                // Suite
+                const selectedSuite = document.querySelector('.suite-option.selected');
+                if (selectedSuite) {
+                    document.getElementById('summary-suite').textContent = selectedSuite.querySelector('h3').textContent;
+                    document.getElementById('confirmation-suite').textContent = selectedSuite.querySelector('h3').textContent;
+                }
+                
+                // Dates
+                const checkin = document.getElementById('checkin-date').value;
+                const checkout = document.getElementById('checkout-date').value;
+                
+                if (checkin && checkout) {
+                    const checkinDate = new Date(checkin);
+                    const checkoutDate = new Date(checkout);
+                    const nights = Math.floor((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
+                    
+                    document.getElementById('summary-dates').textContent = 
+                        `${formatDate(checkinDate)} - ${formatDate(checkoutDate)}`;
+                    document.getElementById('summary-nights').textContent = 
+                        `${nights} nuit${nights > 1 ? 's' : ''}`;
+                    
+                    document.getElementById('confirmation-checkin').textContent = formatDate(checkinDate);
+                    document.getElementById('confirmation-checkout').textContent = formatDate(checkoutDate);
+                }
+                
+                // Occupants
+                const adults = document.getElementById('adults-count').value;
+                const children = document.getElementById('children-count').value;
+                
+                document.getElementById('summary-guests').textContent = 
+                    `${adults} adulte${adults > 1 ? 's' : ''}` + 
+                    (children > 0 ? `, ${children} enfant${children > 1 ? 's' : ''}` : '');
+                
+                // Options
+                const selectedOptions = [];
+                document.querySelectorAll('.option-checkbox:checked').forEach(option => {
+                    selectedOptions.push(option.closest('.option-item').querySelector('h4').textContent);
+                });
+                
+                document.getElementById('summary-options').textContent = 
+                    selectedOptions.length > 0 ? selectedOptions.join(', ') : 'Aucune option sélectionnée';
+                
+                // Calcul du total (simplifié)
+                if (selectedSuite) {
+                    const basePrice = parseInt(selectedSuite.querySelector('h4').textContent.replace(/[^\d]/g, ''));
+                    const nights = Math.floor((new Date(checkout) - new Date(checkin)) / (1000 * 60 * 60 * 24));
+                    let total = basePrice * nights;
+                    
+                    // Ajouter les options
+                    document.querySelectorAll('.option-checkbox:checked').forEach(option => {
+                        const priceText = option.closest('.option-item').querySelector('.option-price').textContent;
+                        const price = parseInt(priceText.replace(/[^\d]/g, ''));
+                        
+                        if (priceText.includes('/pers/jour')) {
+                            total += price * adults * nights;
+                        } else if (priceText.includes('/jour')) {
+                            total += price * nights;
+                        } else {
+                            total += price;
+                        }
+                    });
+                    
+                    document.getElementById('summary-total').textContent = `€${total.toLocaleString()}`;
+                }
+                
+                // Numéro de réservation aléatoire
+                document.getElementById('booking-number').textContent = 
+                    `ECL-${new Date().getFullYear()}-${Math.floor(100000 + Math.random() * 900000)}`;
+            }
+            
+            function formatDate(date) {
+                return date.toLocaleDateString('fr-FR', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+            }
+            
+            // Gestion du formulaire de confirmation
+            document.querySelector('.confirm-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (validateStep(currentStep)) {
+                    // Simulation d'envoi du formulaire
+                    const formData = {
+                        suite: document.querySelector('.suite-option.selected') ? 
+                              document.querySelector('.suite-option.selected h3').textContent : '',
+                        dates: document.getElementById('summary-dates').textContent,
+                        guests: document.getElementById('summary-guests').textContent,
+                        options: document.getElementById('summary-options').textContent,
+                        total: document.getElementById('summary-total').textContent,
+                        customer: {
+                            name: document.getElementById('first-name').value + ' ' + 
+                                  document.getElementById('last-name').value,
+                            email: document.getElementById('email').value
+                        }
+                    };
+                    
+                    // Animation de chargement
+                    const btn = this;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement...';
+                    btn.disabled = true;
+                    
+                    // Simulation de délai pour le traitement
+                    setTimeout(function() {
+                        showStep(4); // Afficher la confirmation
+                        
+                        // Envoyer les données au serveur (simulé)
+                        console.log('Données envoyées:', formData);
+                        
+                        // Réinitialiser le bouton
+                        btn.innerHTML = 'Confirmer la Réservation';
+                        btn.disabled = false;
+                    }, 2000);
+                }
+            });
+            
+            // Formatage automatique des champs de carte
+            document.getElementById('card-number').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\s+/g, '');
+                if (value.length > 0) {
+                    value = value.match(new RegExp('.{1,4}', 'g')).join(' ');
+                }
+                e.target.value = value;
+            });
+            
+            document.getElementById('card-expiry').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 2) {
+                    value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                }
+                e.target.value = value;
+            });
+            
+            // Initialiser le datepicker avec des dates valides
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            document.getElementById('checkin-date').min = formatDateForInput(today);
+            document.getElementById('checkout-date').min = formatDateForInput(tomorrow);
+            
+            document.getElementById('checkin-date').addEventListener('change', function() {
+                const checkinDate = new Date(this.value);
+                const nextDay = new Date(checkinDate);
+                nextDay.setDate(nextDay.getDate() + 1);
+                document.getElementById('checkout-date').min = formatDateForInput(nextDay);
+                
+                // Si la date de départ est antérieure à la nouvelle date min, la réinitialiser
+                const checkoutDate = new Date(document.getElementById('checkout-date').value);
+                if (checkoutDate < nextDay) {
+                    document.getElementById('checkout-date').value = formatDateForInput(nextDay);
+                }
+            });
+            
+            function formatDateForInput(date) {
+                return date.toISOString().split('T')[0];
+            }
+            
+            // Activer le premier bouton "Suivant" lorsqu'une suite est sélectionnée
+            document.querySelector('#step-1 .next-btn').disabled = true;
+        });
+        
+        // Animation du curseur personnalisé
+        if (document.querySelector('.cursor')) {
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                
+                gsap.to(cursorFollower, {
+                    x: e.clientX,
+                    y: e.clientY,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                });
+            });
+            
+            // Changer le curseur sur les éléments interactifs
+            const interactiveElements = document.querySelectorAll('a, button, .suite-option, .option-item, input, textarea, select');
+            
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.classList.add('active');
+                    cursorFollower.classList.add('active');
+                });
+                
+                el.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('active');
+                    cursorFollower.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>

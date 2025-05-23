@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite Deluxe - ÉCLAT Hôtel de Luxe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="../../styles/SuiteDeLuxe.css">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        /* Styles spécifiques à la suite deluxe */
+        .suite-hero {
+            height: 80vh;
+            background: linear-gradient(rgba(10, 10, 10, 0.3), rgba(10, 10, 10, 0.3)), 
+                        url('https://images.unsplash.com/photo-1566669437686-c2b5c39527e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80') no-repeat center center/cover;
+        }
+        
+        .suite-features {
+            background-color: #f9f7f2;
+        }
+        
+        .design-details {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+        }
+    </style>
+</head>
+<body class="suite-page">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-inner">
+                <div class="logo">ÉCLAT</div>
+                <div class="navigation">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html" data-text="Home">Home</a></li>
+                            <li><a href="index.html#suites" data-text="Suites">Suites</a></li>
+                            <li><a href="index.html#experiences" data-text="Experiences">Experiences</a></li>
+                            <li><a href="index.html#gallery" data-text="Gallery">Gallery</a></li>
+                            <li><a href="index.html#contact" data-text="Contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="nav-right">
+                        <div class="book-btn">Réserver</div>
+                        <div class="menu-btn">
+                            <div class="menu-btn-inner">
+                                <div class="menu-line"></div>
+                                <div class="menu-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-inner">
+            <div class="mobile-menu-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#suites">Suites</a></li>
+                    <li><a href="index.html#experiences">Experiences</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-footer">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p>© 2023 ÉCLAT. Tous droits réservés.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Suite -->
+    <section class="suite-hero">
+        <div class="container">
+            <div class="suite-hero-content">
+                <h1 class="suite-title" data-splitting>Suite <span>Deluxe</span></h1>
+                <div class="suite-price">
+                    <span>À partir de</span>
+                    <h3>€750<small>/nuit</small></h3>
+                </div>
+                <a href="#reservation" class="cta-btn">Réserver maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Intro -->
+    <section class="suite-intro">
+        <div class="container">
+            <div class="suite-intro-inner">
+                <div class="suite-intro-content">
+                    <h2>Élégance <span>Contemporaine</span></h2>
+                    <p>La Suite Deluxe d'ÉCLAT incarne l'art de vivre parisien moderne. D'une superficie de 65 m², cette suite allie design épuré et confort raffiné pour créer une ambiance à la fois chaleureuse et sophistiquée.</p>
+                    <p>Avec ses matériaux nobles, sa lumière naturelle abondante et son attention aux détails, la Suite Deluxe offre une expérience hôtelière d'exception pour les voyageurs exigeants.</p>
+                    <div class="suite-highlight">
+                        <i class="fas fa-gem"></i>
+                        <p>Profitez d'un crédit de €100 à utiliser au spa ou au restaurant lors de votre séjour.</p>
+                    </div>
+                </div>
+                <div class="suite-intro-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-ruler-combined"></i>
+                        <div>
+                            <span>Superficie</span>
+                            <h4>65 m²</h4>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-bed"></i>
+                        <div>
+                            <span>Chambre</span>
+                            <h4>1 Chambre spacieuse</h4>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-user-friends"></i>
+                        <div>
+                            <span>Capacité</span>
+                            <h4>2 personnes</h4>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-binoculars"></i>
+                        <div>
+                            <span>Vue</span>
+                            <h4>Sur cour ou rue tranquille</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Details -->
+    <section class="design-details">
+        <div class="container">
+            <div class="design-inner">
+                <div class="design-content">
+                    <div class="section-header">
+                        <span class="section-subtitle">Design</span>
+                        <h2 class="section-title">Une <span>Signature</span> ÉCLAT</h2>
+                    </div>
+                    <p>La Suite Deluxe a été conçue par l'architecte d'intérieur renommé Jean-Luc Bertrand, qui a créé un espace où l'artisanat français traditionnel rencontre le design contemporain.</p>
+                    <div class="design-features">
+                        <div class="feature">
+                            <h4>Matériaux Nobles</h4>
+                            <p>Parquet en chêne massif, marbre français et métaux patinés à la main</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Éclairage Sur Mesure</h4>
+                            <p>Système d'éclairage intelligent avec scènes prédéfinies pour chaque moment de la journée</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Œuvres d'Art</h4>
+                            <p>Sélection d'œuvres originales d'artistes émergents français</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="design-image">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Design Suite Deluxe">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Features -->
+    <section class="suite-features">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Équipements</span>
+                <h2 class="section-title">Confort <span>Exceptionnel</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Lit King Size</h3>
+                    <p>Lit Hypnos sur mesure avec matelas en latex naturel et choix d'oreillers</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <h3>Salle de Bain</h3>
+                    <p>Espace bain avec douche à l'italienne en marbre et produits de bain Diptyque</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3>Technologie</h3>
+                    <p>Écran TV 4K ultra HD, système son Bose et connexion internationale</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Espace Café</h3>
+                    <p>Machine Nespresso avec sélection de grands crus et thé Mariage Frères</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Connectivité</h3>
+                    <p>WiFi haut débit illimité et bureau ergonomique pour travailler</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3>Service</h3>
+                    <p>Service en chambre 24h/24 et nettoyage quotidien minutieux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Gallery -->
+    <section class="suite-gallery">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Galerie</span>
+                <h2 class="section-title">Découvrez la <span>Suite Deluxe</span></h2>
+            </div>
+        </div>
+        <div class="suite-gallery-grid">
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1566669437686-c2b5c39527e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Chambre Deluxe">
+                <div class="gallery-caption">
+                    <h3>Chambre Deluxe</h3>
+                    <p>Lit king-size avec tête de lit en velours et parquet en chêne</p>
+                </div>
+            </div>
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80" alt="Espace Salon">
+                <div class="gallery-caption">
+                    <h3>Espace Salon</h3>
+                    <p>Coin détente avec canapé design et table basse en marbre</p>
+                </div>
+            </div>
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Salle de Bain">
+                <div class="gallery-caption">
+                    <h3>Salle de Bain</h3>
+                    <p>Douche à l'italienne en marbre et miroir lumineux</p>
+                </div>
+            </div>
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Espace Bureau">
+                <div class="gallery-caption">
+                    <h3>Espace Bureau</h3>
+                    <p>Bureau ergonomique avec vue paisible et chaise design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Reservation -->
+    <section id="reservation" class="suite-reservation">
+        <div class="container">
+            <div class="reservation-inner">
+                <div class="reservation-content">
+                    <div class="section-header">
+                        <span class="section-subtitle">Réservation</span>
+                        <h2 class="section-title">Planifiez Votre <span>Séjour</span></h2>
+                        <p>La Suite Deluxe est parfaite pour un séjour romantique ou un voyage d'affaires en solo. Notre équipe se tient à votre disposition pour personnaliser votre expérience.</p>
+                    </div>
+                    <div class="reservation-info">
+                        <div class="info-item">
+                            <i class="fas fa-percent"></i>
+                            <div>
+                                <h5>Offre Spéciale</h5>
+                                <p>15% de réduction sur les séjours de 3 nuits ou plus</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h5>Check-in Flexible</h5>
+                                <p>Arrivée possible à toute heure selon disponibilité</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-form">
+                    <form id="deluxe-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nom Complet" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Téléphone" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Arrivée</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Départ</label>
+                                <input type="date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="" disabled selected>Motif du séjour</option>
+                                <option value="romantic">Voyage romantique</option>
+                                <option value="business">Voyage d'affaires</option>
+                                <option value="leisure">Loisirs</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">Réserver Maintenant <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Experiences -->
+    <section class="local-experiences">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Découverte</span>
+                <h2 class="section-title">Expériences <span>Locales</span></h2>
+                <p>Notre conciergerie peut organiser ces expériences exclusives pendant votre séjour en Suite Deluxe</p>
+            </div>
+            <div class="experiences-grid">
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1520&q=80" alt="Dîner Coup de Cœur">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Dîner Coup de Cœur</h3>
+                        <p>Réservation dans l'un de nos restaurants partenaires secrets, sélectionnés par notre chef</p>
+                        <span class="price">À partir de €120/pers</span>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Visite Privée">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Visite Privée</h3>
+                        <p>Accès hors des heures d'ouverture à un monument parisien avec guide expert</p>
+                        <span class="price">À partir de €200/pers</span>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="https://images.unsplash.com/photo-1594054528735-c371f35e8043?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Atelier Culinaire">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Atelier Culinaire</h3>
+                        <p>Cours privé avec notre chef étoilé pour apprendre les secrets de la cuisine française</p>
+                        <span class="price">À partir de €180/pers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo"><a href="index.html"> ÉCLAT</a></div>
+                
+                <div class="footer-newsletter">
+                    <h5>Newsletter</h5>
+                    <p>Abonnez-vous pour recevoir nos offres exclusives</p>
+                    <form>
+                        <input type="email" placeholder="Votre Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>© 2023 ÉCLAT. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script>
+        // Scripts spécifiques à la suite deluxe
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation du titre de la suite
+            if (typeof Splitting !== 'undefined') {
+                Splitting({
+                    target: document.querySelector('.suite-title'),
+                    by: 'chars'
+                });
+                
+                const chars = document.querySelectorAll('.suite-title .char');
+                chars.forEach((char, i) => {
+                    char.style.animationDelay = `${i * 0.05}s`;
+                    char.style.display = 'inline-block';
+                });
+            }
+            
+            // Animation GSAP pour la galerie et les éléments
+            if (typeof gsap !== 'undefined') {
+                // Animation des éléments de la suite
+                gsap.utils.toArray('.suite-gallery-item, .feature-item, .design-inner').forEach((item, i) => {
+                    gsap.from(item, {
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 80%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.8,
+                        delay: i * 0.1
+                    });
+                });
+                
+                // Animation des expériences locales
+                gsap.from('.experience-card', {
+                    scrollTrigger: {
+                        trigger: '.local-experiences',
+                        start: "top 70%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.2
+                });
+            }
+            
+            // Gestion du formulaire de réservation
+            const reservationForm = document.getElementById('deluxe-form');
+            if (reservationForm) {
+                reservationForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulation d'envoi
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement...';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        alert('Merci pour votre réservation en Suite Deluxe. Un email de confirmation vous a été envoyé avec les détails de votre séjour.');
+                        reservationForm.reset();
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        
+                        // Animation de confirmation
+                        gsap.to(submitBtn, {
+                            backgroundColor: '#4CAF50',
+                            duration: 0.5
+                        });
+                        
+                        setTimeout(() => {
+                            gsap.to(submitBtn, {
+                                backgroundColor: 'var(--primary-color)',
+                                duration: 0.5
+                            });
+                        }, 2000);
+                    }, 1500);
+                });
+            }
+            
+            // Animation des cartes d'expérience au survol
+            const experienceCards = document.querySelectorAll('.experience-card');
+            experienceCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        y: -10,
+                        boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
+                        duration: 0.3
+                    });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        y: 0,
+                        boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
+                        duration: 0.3
+                    });
+                });
+            });
+        });
+         window.addEventListener("load", function () {
+        const preloader = document.querySelector(".preloader");
+        if (preloader) {
+            preloader.style.opacity = "0";
+            preloader.style.visibility = "hidden";
+            preloader.style.transition = "opacity 0.5s ease";
+        }
+    });
+    </script>
+</body>
+</html>

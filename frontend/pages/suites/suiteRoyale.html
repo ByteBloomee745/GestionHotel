@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite Royale - ÉCLAT Hôtel de Luxe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="../../styles/SuiteRoy.css">
+    <link rel="stylesheet" href="../../styles.css">
+
+
+    <style>
+        /* Styles spécifiques à la suite */
+        .suite-hero {
+            height: 80vh;
+            background: linear-gradient(rgba(10, 10, 10, 0.3), rgba(10, 10, 10, 0.3)),
+                url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+        }
+
+        .suite-features {
+            background-color: #f9f7f2;
+        }
+
+        .suite-gallery-item {
+            height: 400px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="suite-page">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-inner">
+                <div class="logo">ÉCLAT</div>
+                <div class="navigation">
+                    <nav>
+                        <ul>
+                            <li><a href="../../index.html" data-text="Home">Home</a></li>
+                            <li><a href="../../index.html#suites" data-text="Suites">Suites</a></li>
+                            <li><a href="../../index.html#experiences" data-text="Experiences">Experiences</a></li>
+                            <li><a href="../../index.html#gallery" data-text="Gallery">Gallery</a></li>
+                            <li><a href="../../index.html#contact" data-text="Contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="nav-right">
+                        <div class="book-btn">Réserver</div>
+                        <div class="menu-btn">
+                            <div class="menu-btn-inner">
+                                <div class="menu-line"></div>
+                                <div class="menu-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-inner">
+            <div class="mobile-menu-nav">
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../index.html#suites">Suites</a></li>
+                    <li><a href="../../index.html#experiences">Experiences</a></li>
+                    <li><a href="../../index.html#gallery">Gallery</a></li>
+                    <li><a href="../../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-footer">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p>© 2023 ÉCLAT. Tous droits réservés.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Suite -->
+    <section class="suite-hero">
+        <div class="container">
+            <div class="suite-hero-content">
+                <h1 class="suite-title" data-splitting>Suite <span>Royale</span></h1>
+                <div class="suite-price">
+                    <span>À partir de</span>
+                    <h3>€1,200<small>/nuit</small></h3>
+                </div>
+                <a href="#reservation" class="cta-btn">Réserver maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Intro -->
+    <section class="suite-intro">
+        <div class="container">
+            <div class="suite-intro-inner">
+                <div class="suite-intro-content">
+                    <h2>L'Apogée du <span>Luxe Parisien</span></h2>
+                    <p>La Suite Royale représente l'expression ultime de l'art de vivre à la française. Surplombant les
+                        toits de Paris depuis le dernier étage de l'hôtel ÉCLAT, cette suite de 120 m² allie élégance
+                        classique et confort contemporain dans un écrin de raffinement absolu.</p>
+                    <p>Chaque détail a été pensé pour offrir une expérience sensorielle unique, des matériaux nobles
+                        sélectionnés avec soin aux œuvres d'art originales qui ornent les murs.</p>
+                </div>
+                <div class="suite-intro-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-ruler-combined"></i>
+                        <div>
+                            <span>Superficie</span>
+                            <h4>120 m²</h4>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-bed"></i>
+                        <div>
+                            <span>Chambres</span>
+                            <h4>1 Chambre principale + 1 Salon convertible</h4>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-user-friends"></i>
+                        <div>
+                            <span>Capacité</span>
+                            <h4>2-4 personnes</h4>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-binoculars"></i>
+                        <div>
+                            <span>Vue</span>
+                            <h4>Panoramique sur Paris</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Features -->
+    <section class="suite-features">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Équipements</span>
+                <h2 class="section-title">Services <span>Exclusifs</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Salle de Bain en Marbre</h3>
+                    <p>Salle de bain spacieuse avec baignoire freestanding en marbre de Carrare, douche à l'italienne et
+                        produits de bain Hermès.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>Service Majordome 24/7</h3>
+                    <p>Majordome dédié disponible à toute heure pour répondre à vos moindres désirs et anticiper vos
+                        besoins.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Petit-Déjeuner Privé</h3>
+                    <p>Service de petit-déjeuner gastronomique servi dans votre suite ou sur la terrasse privée selon
+                        votre préférence.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <h3>Bar Personnel</h3>
+                    <p>Bar entièrement approvisionné selon vos goûts, avec une sélection de grands crus et spiritueux
+                        premium.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3>Système Domotique</h3>
+                    <p>Contrôle intelligent de l'éclairage, des stores, de la température et du divertissement via
+                        tablette tactile.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Transfert Privé</h3>
+                    <p>Service de voiturier avec véhicule de luxe (Mercedes Classe S ou équivalent) pour vos
+                        déplacements parisiens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Gallery -->
+    <section class="suite-gallery">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Galerie</span>
+                <h2 class="section-title">Découvrez la <span>Suite Royale</span></h2>
+            </div>
+        </div>
+        <div class="suite-gallery-grid">
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="Chambre Principale">
+                <div class="gallery-caption">
+                    <h3>Chambre Principale</h3>
+                    <p>Lit king-size avec matelas Hypnos sur mesure et linge de lit en soie</p>
+                </div>
+            </div>
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566752223-86860c7d5f3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="Salon Privé">
+                <div class="gallery-caption">
+                    <h3>Salon Privé</h3>
+                    <p>Espace de détente avec mobilier design et cheminée contemporaine</p>
+                </div>
+            </div>
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="Salle de Bain">
+                <div class="gallery-caption">
+                    <h3>Salle de Bain</h3>
+                    <p>Marbre de Carrare, baignoire freestanding et douche à l'italienne</p>
+                </div>
+            </div>
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="Terrasse Privée">
+                <div class="gallery-caption">
+                    <h3>Terrasse Privée</h3>
+                    <p>Espace extérieur avec vue panoramique et mobilier de jardin design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Reservation -->
+    <section id="reservation" class="suite-reservation">
+        <div class="container">
+            <div class="reservation-inner">
+                <div class="reservation-content">
+                    <div class="section-header">
+                        <span class="section-subtitle">Réservation</span>
+                        <h2 class="section-title">Réservez Votre <span>Séjour</span></h2>
+                        <p>Pour réserver la Suite Royale ou obtenir des informations complémentaires, veuillez compléter
+                            le formulaire ci-contre. Notre équipe se fera un plaisir de personnaliser votre séjour.</p>
+                    </div>
+                    <div class="reservation-info">
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h5>Réservations</h5>
+                                <p>+33 1 23 45 67 89</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>reservations@eclat.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h5>Heures d'ouverture</h5>
+                                <p>24h/24, 7j/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Nom Complet" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Téléphone" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Arrivée</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Départ</label>
+                                <input type="date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="" disabled selected>Nombre d'adultes</option>
+                                <option value="1">1 Adulte</option>
+                                <option value="2">2 Adultes</option>
+                                <option value="3">3 Adultes</option>
+                                <option value="4">4 Adultes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Demandes Spéciales"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Réserver Maintenant <i
+                                class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Testimonials -->
+    <section class="suite-testimonials">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Témoignages</span>
+                <h2 class="section-title">Ce que nos <span>Clients</span> Disent</h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"La Suite Royale a dépassé toutes nos attentes. La vue sur Paris est à couper le souffle, et
+                            l'attention aux détails est remarquable. Le service de majordome a rendu notre séjour
+                            vraiment spécial."</p>
+                        <div class="client-info">
+                            <h4>Sophie et Jean Dupont</h4>
+                            <span>Marseille, France</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Nous voyageons dans les meilleurs hôtels du monde, et la Suite Royale à ÉCLAT se classe
+                            parmi nos expériences les plus mémorables. La terrasse privée au coucher du soleil est
+                            magique."</p>
+                        <div class="client-info">
+                            <h4>Michael et Sarah Johnson</h4>
+                            <span>New York, USA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">ÉCLAT</div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="../../index.html">Accueil</a></li>
+                        <li><a href="../../index.html#suites">Suites</a></li>
+                        <li><a href="../../index.html#experiences">Expériences</a></li>
+                        <li><a href="../../index.html#gallery">Galerie</a></li>
+                        <li><a href="../../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>Newsletter</h5>
+                    <p>Abonnez-vous pour recevoir nos offres exclusives</p>
+                    <form>
+                        <input type="email" placeholder="Votre Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>© 2023 ÉCLAT. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="frontend/scripts/suites.js"></script>
+    <script>
+        // Scripts spécifiques à la suite
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animation du titre de la suite
+            if (typeof Splitting !== 'undefined') {
+                Splitting({
+                    target: document.querySelector('.suite-title'),
+                    by: 'chars'
+                });
+
+                const chars = document.querySelectorAll('.suite-title .char');
+                chars.forEach((char, i) => {
+                    char.style.animationDelay = `${i * 0.05}s`;
+                    char.style.display = 'inline-block';
+                });
+            }
+
+            // Animation GSAP pour la galerie
+            if (typeof gsap !== 'undefined') {
+                gsap.utils.toArray('.suite-gallery-item').forEach((item, i) => {
+                    gsap.from(item, {
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 80%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.8,
+                        delay: i * 0.1
+                    });
+                });
+            }
+
+            // Gestion du formulaire de réservation
+            const reservationForm = document.querySelector('.reservation-form form');
+            if (reservationForm) {
+                reservationForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    alert('Merci pour votre demande de réservation. Notre équipe vous contactera dans les plus brefs délais pour confirmer votre séjour en Suite Royale.');
+                    this.reset();
+                });
+            }
+        });
+        window.addEventListener("load", function () {
+        const preloader = document.querySelector(".preloader");
+        if (preloader) {
+            preloader.style.opacity = "0";
+            preloader.style.visibility = "hidden";
+            preloader.style.transition = "opacity 0.5s ease";
+        }
+    });
+    </script>
+</body>
+
+</html>

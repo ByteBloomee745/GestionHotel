@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite Présidentielle - ÉCLAT Hôtel de Luxe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="../../styles/SuitePrè.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* Styles spécifiques à la suite présidentielle */
+        .suite-hero {
+            height: 80vh;
+            background: linear-gradient(rgba(10, 10, 10, 0.3), rgba(10, 10, 10, 0.3)), 
+                        url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+        }
+        
+        .suite-features {
+            background-color: #f9f7f2;
+        }
+        
+        .amenities-list li:nth-child(odd) {
+            background-color: rgba(184, 159, 122, 0.05);
+        }
+    </style>
+</head>
+<body class="suite-page">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header-inner">
+                <div class="logo">ÉCLAT</div>
+                <div class="navigation">
+                    <nav>
+                        <ul>
+                            <li><a href="../../index.html" data-text="Home">Home</a></li>
+                            <li><a href="../../index.html#suites" data-text="Suites">Suites</a></li>
+                            <li><a href="../../index.htmlexperiences" data-text="Experiences">Experiences</a></li>
+                            <li><a href="../../index.html#gallery" data-text="Gallery">Gallery</a></li>
+                            <li><a href="../../index.html#contact" data-text="Contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="nav-right">
+                        <div class="book-btn"><a href="../../pages/Reservation.html">Réserver</a></div>
+                        <div class="menu-btn">
+                            <div class="menu-btn-inner">
+                                <div class="menu-line"></div>
+                                <div class="menu-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-inner">
+            <div class="mobile-menu-nav">
+                 <ul>
+                            <li><a href="../../index.html" data-text="Home">Home</a></li>
+                            <li><a href="../../index.html#suites" data-text="Suites">Suites</a></li>
+                            <li><a href="../../index.htmlexperiences" data-text="Experiences">Experiences</a></li>
+                            <li><a href="../../index.html#gallery" data-text="Gallery">Gallery</a></li>
+                            <li><a href="../../index.html#contact" data-text="Contact">Contact</a></li>
+                        </ul>
+            </div>
+            <div class="mobile-menu-footer">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p>© 2023 ÉCLAT. Tous droits réservés.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Suite -->
+    <section class="suite-hero">
+        <div class="container">
+            <div class="suite-hero-content">
+                <h1 class="suite-title" data-splitting>Suite <span>Présidentielle</span></h1>
+                <div class="suite-price">
+                    <span>À partir de</span>
+                    <h3>€950<small>/nuit</small></h3>
+                </div>
+                <a href="#reservation" class="cta-btn">Réserver maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Intro -->
+    <section class="suite-intro">
+        <div class="container">
+            <div class="suite-intro-inner">
+                <div class="suite-intro-content">
+                    <h2>L'Excellence <span>Redéfinie</span></h2>
+                    <p>La Suite Présidentielle d'ÉCLAT incarne le summum du luxe contemporain. Cet écrin de 90 m² allie élégance française et technologie de pointe pour offrir une expérience hôtelière sans pareille.</p>
+                    <p>Avec son salon diplomatique, sa chambre à coucher spacieuse et sa salle de bain en marbre, cette suite est conçue pour les voyageurs les plus exigeants recherchant intimité et perfection.</p>
+                    <div class="suite-highlight">
+                        <i class="fas fa-crown"></i>
+                        <p>Inclut l'accès exclusif au Salon Privé ÉCLAT et un service de conciergerie dédié 24h/24.</p>
+                    </div>
+                </div>
+                <div class="suite-intro-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-ruler-combined"></i>
+                        <div>
+                            <span>Superficie</span>
+                            <h4>90 m²</h4>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-bed"></i>
+                        <div>
+                            <span>Chambres</span>
+                            <h4>1 Chambre principale + Salon</h4>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-user-friends"></i>
+                        <div>
+                            <span>Capacité</span>
+                            <h4>2 personnes</h4>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-umbrella-beach"></i>
+                        <div>
+                            <span>Terrasse</span>
+                            <h4>Privée avec vue sur Paris</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Features -->
+    <section class="suite-features">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Équipements</span>
+                <h2 class="section-title">Privilèges <span>Exclusifs</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Conciergerie Personnelle</h3>
+                    <p>Un concierge attitré disponible 24h/24 pour organiser visites privées, réservations exclusives et services sur mesure.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h3>Cave Privative</h3>
+                    <p>Sélection de grands crus et spiritueux rares disponibles dans votre suite, incluant une bouteille de champagne offerte à l'arrivée.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Transfert Premium</h3>
+                    <p>Service de voiturier avec véhicule haut de gamme (Mercedes Classe S ou équivalent) pour vos déplacements parisiens.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Petit-Déjeuner Signature</h3>
+                    <p>Service en suite d'un petit-déjeuner gastronomique préparé par notre chef étoilé, à l'heure de votre choix.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Spa Privé</h3>
+                    <p>Accès illimité au spa privatif avec soins personnalisés et produits de luxe.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Bureau Équipé</h3>
+                    <p>Espace travail haut de gamme avec équipement technologique dernier cri et service de secrétariat sur demande.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Amenities -->
+    <section class="suite-amenities">
+        <div class="container">
+            <div class="amenities-inner">
+                <div class="amenities-image">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Salle de Bain Présidentielle">
+                </div>
+                <div class="amenities-content">
+                    <div class="section-header">
+                        <span class="section-subtitle">Détails</span>
+                        <h2 class="section-title">Équipements <span>Premium</span></h2>
+                    </div>
+                    <ul class="amenities-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Lit king-size Hypnos sur mesure avec choix d'oreillers</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Salle de bain en marbre avec baignoire freestanding et douche à l'italienne</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Produits de bain Hermès ou Diptyque</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Terrasse privée avec mobilier design et vue panoramique</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Système domotique intelligent (éclairage, température, stores)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Écran TV 4K ultra HD avec système son surround</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Coffre-fort électronique grande capacité</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Minibar personnalisable selon vos préférences</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Machine à espresso Nespresso avec sélection de grands crus</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Service de blanchisserie et pressing express</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Gallery -->
+    <section class="suite-gallery">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Galerie</span>
+                <h2 class="section-title">Découvrez la <span>Suite Présidentielle</span></h2>
+            </div>
+        </div>
+        <div class="suite-gallery-grid">
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Salon Principal">
+                <div class="gallery-caption">
+                    <h3>Salon Principal</h3>
+                    <p>Espace de réception avec mobilier design et vue panoramique</p>
+                </div>
+            </div>
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Chambre à Coucher">
+                <div class="gallery-caption">
+                    <h3>Chambre à Coucher</h3>
+                    <p>Lit king-size Hypnos avec linge de lit en coton égyptien</p>
+                </div>
+            </div>
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566752223-86860c7d5f3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Salle de Bain">
+                <div class="gallery-caption">
+                    <h3>Salle de Bain</h3>
+                    <p>Marbre de Carrare avec baignoire freestanding et douche à l'italienne</p>
+                </div>
+            </div>
+            <div class="suite-gallery-item">
+                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Terrasse Privée">
+                <div class="gallery-caption">
+                    <h3>Terrasse Privée</h3>
+                    <p>Espace extérieur avec vue imprenable et mobilier haut de gamme</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Reservation -->
+    <section id="reservation" class="suite-reservation">
+        <div class="container">
+            <div class="reservation-inner">
+                <div class="reservation-content">
+                    <div class="section-header">
+                        <span class="section-subtitle">Exclusivité</span>
+                        <h2 class="section-title">Réservez Votre <span>Expérience</span></h2>
+                        <p>La Suite Présidentielle est l'une de nos suites les plus demandées. Nous vous recommandons de réserver bien à l'avance pour garantir sa disponibilité lors de votre séjour.</p>
+                    </div>
+                    <div class="reservation-info">
+                        <div class="info-item">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <h5>Conditions Spéciales</h5>
+                                <p>Séjour minimum de 2 nuits - Annulation gratuite jusqu'à 7 jours avant</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-gift"></i>
+                            <div>
+                                <h5>Offre Exclusive</h5>
+                                <p>Pour tout séjour de plus de 5 nuits, bénéficiez d'un dîner gastronomique offert</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-form">
+                    <form id="presidential-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nom Complet" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Téléphone" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Arrivée</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Départ</label>
+                                <input type="date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Demandes Spéciales (Préférences de minibar, heure d'arrivée, etc.)"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Valider la Réservation <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite Experiences -->
+    <section class="suite-experiences">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-subtitle">Expériences</span>
+                <h2 class="section-title">Services <span>Sur Mesure</span></h2>
+            </div>
+            <div class="experiences-grid">
+                <div class="experience-item">
+                    <div class="experience-image">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dîner Privé">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Dîner Privé en Suite</h3>
+                        <p>Notre chef étoilé préparera un menu personnalisé servi dans l'intimité de votre suite par notre maître d'hôtel attitré.</p>
+                        <a href="#" class="experience-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Spa Privatif">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Spa Privatif</h3>
+                        <p>Séance de spa privée dans votre suite avec notre thérapeute attitré et produits de luxe selon vos préférences.</p>
+                        <a href="#" class="experience-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">ÉCLAT</div>
+                <div class="footer-links">
+                    <ul>
+                            <li><a href="../../index.html" data-text="Home">Home</a></li>
+                            <li><a href="../../index.html#suites" data-text="Suites">Suites</a></li>
+                            <li><a href="../../index.htmlexperiences" data-text="Experiences">Experiences</a></li>
+                            <li><a href="../../index.html#gallery" data-text="Gallery">Gallery</a></li>
+                            <li><a href="../../index.html#contact" data-text="Contact">Contact</a></li>
+                        </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h5>Newsletter</h5>
+                    <p>Abonnez-vous pour recevoir nos offres exclusives</p>
+                    <form>
+                        <input type="email" placeholder="Votre Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>© 2023 ÉCLAT. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    
+
+    <script>
+        // Scripts spécifiques à la suite présidentielle
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation du titre de la suite
+            if (typeof Splitting !== 'undefined') {
+                Splitting({
+                    target: document.querySelector('.suite-title'),
+                    by: 'chars'
+                });
+                
+                const chars = document.querySelectorAll('.suite-title .char');
+                chars.forEach((char, i) => {
+                    char.style.animationDelay = `${i * 0.05}s`;
+                    char.style.display = 'inline-block';
+                });
+            }
+            
+            // Animation GSAP pour la galerie et les éléments
+            if (typeof gsap !== 'undefined') {
+                // Animation des éléments de la suite
+                gsap.utils.toArray('.suite-gallery-item, .feature-item, .amenities-inner').forEach((item, i) => {
+                    gsap.from(item, {
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 80%",
+                            toggleActions: "play none none none"
+                        },
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.8,
+                        delay: i * 0.1
+                    });
+                });
+                
+                // Animation des expériences
+                gsap.from('.experience-item', {
+                    scrollTrigger: {
+                        trigger: '.suite-experiences',
+                        start: "top 70%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    stagger: 0.3
+                });
+            }
+            
+            // Gestion du formulaire de réservation
+            const reservationForm = document.getElementById('presidential-form');
+            if (reservationForm) {
+                reservationForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulation d'envoi
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Traitement...';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        alert('Merci pour votre demande de réservation en Suite Présidentielle. Notre conciergerie vous contactera dans les plus brefs délais pour finaliser les détails de votre séjour.');
+                        reservationForm.reset();
+                        submitBtn.innerHTML = 'Valider la Réservation <i class="fas fa-arrow-right"></i>';
+                        submitBtn.disabled = false;
+                    }, 1500);
+                });
+            }
+        });
+        window.addEventListener("load", function () {
+        const preloader = document.querySelector(".preloader");
+        if (preloader) {
+            preloader.style.opacity = "0";
+            preloader.style.visibility = "hidden";
+            preloader.style.transition = "opacity 0.5s ease";
+        }
+    });
+        
+    </script>
+</body>
+</html>
